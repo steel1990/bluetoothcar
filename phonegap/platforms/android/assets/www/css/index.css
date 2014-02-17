@@ -1,0 +1,342 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:14px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+
+    display: none;
+}
+.page.show {
+    display: block;
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+@-moz-keyframes bounce_fountainG {
+    0% {
+        -moz-transform: scale(1);
+        background-color: #000
+    }
+
+    100% {
+        -moz-transform: scale(.3);
+        background-color: #fff
+    }
+}
+
+@-webkit-keyframes bounce_fountainG {
+    0% {
+        -webkit-transform: scale(1);
+        background-color: #000
+    }
+
+    100% {
+        -webkit-transform: scale(.3);
+        background-color: #fff
+    }
+}
+
+@-ms-keyframes bounce_fountainG {
+    0% {
+        -ms-transform: scale(1);
+        background-color: #000
+    }
+
+    100% {
+        -ms-transform: scale(.3);
+        background-color: #fff
+    }
+}
+
+@-o-keyframes bounce_fountainG {
+    0% {
+        -o-transform: scale(1);
+        background-color: #000
+    }
+
+    100% {
+        -o-transform: scale(.3);
+        background-color: #fff
+    }
+}
+
+@keyframes bounce_fountainG {
+    0% {
+        transform: scale(1);
+        background-color: #000
+    }
+
+    100% {
+        transform: scale(.3);
+        background-color: #fff
+    }
+}
+
+#widget-loading {
+    opacity: 0;
+    background: white;
+    font-size: 20px;
+    z-index: 999;
+    transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+}
+
+#widget-loading .balls {
+    position: absolute;
+    width: 12em;
+    height: 1.5em;
+    top: 50%;
+    left: 50%;
+    margin-top: -0.75em;
+    margin-left: -6em;
+}
+
+#widget-loading .balls .ball {
+    position: absolute;
+    top: 0;
+    background-color: #000;
+    width: 1.5em;
+    height: 1.5em;
+    -moz-animation-name: bounce_fountainG;
+    -moz-animation-duration: 1.3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-direction: linear;
+    -moz-transform: scale(.3);
+    -moz-border-radius: 1em;
+    -webkit-animation-name: bounce_fountainG;
+    -webkit-animation-duration: 1.3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: linear;
+    -webkit-transform: scale(.3);
+    -webkit-border-radius: 1em;
+    -ms-animation-name: bounce_fountainG;
+    -ms-animation-duration: 1.3s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-direction: linear;
+    -ms-transform: scale(.3);
+    -ms-border-radius: 1em;
+    -o-animation-name: bounce_fountainG;
+    -o-animation-duration: 1.3s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-direction: linear;
+    -o-transform: scale(.3);
+    -o-border-radius: 1em;
+    animation-name: bounce_fountainG;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    animation-direction: linear;
+    transform: scale(.3);
+    border-radius: 1em;
+}
+
+#widget-loading .balls .ball_1 {
+    left: 0;
+    -moz-animation-delay: .52s;
+    -webkit-animation-delay: .52s;
+    -ms-animation-delay: .52s;
+    -o-animation-delay: .52s;
+    animation-delay: .52s
+}
+
+#widget-loading .balls .ball_2 {
+    left: 1.5em;
+    -moz-animation-delay: .65s;
+    -webkit-animation-delay: .65s;
+    -ms-animation-delay: .65s;
+    -o-animation-delay: .65s;
+    animation-delay: .65s
+}
+
+#widget-loading .balls .ball_3 {
+    left: 3em;
+    -moz-animation-delay: .78s;
+    -webkit-animation-delay: .78s;
+    -ms-animation-delay: .78s;
+    -o-animation-delay: .78s;
+    animation-delay: .78s
+}
+
+#widget-loading .balls .ball_4 {
+    left: 4.5em;
+    -moz-animation-delay: .91s;
+    -webkit-animation-delay: .91s;
+    -ms-animation-delay: .91s;
+    -o-animation-delay: .91s;
+    animation-delay: .91s
+}
+
+#widget-loading .balls .ball_5 {
+    left: 6em;
+    -moz-animation-delay: 1.04s;
+    -webkit-animation-delay: 1.04s;
+    -ms-animation-delay: 1.04s;
+    -o-animation-delay: 1.04s;
+    animation-delay: 1.04s
+}
+
+#widget-loading .balls .ball_6 {
+    left: 7.5em;
+    -moz-animation-delay: 1.17s;
+    -webkit-animation-delay: 1.17s;
+    -ms-animation-delay: 1.17s;
+    -o-animation-delay: 1.17s;
+    animation-delay: 1.17s
+}
+
+#widget-loading .balls .ball_7 {
+    left: 9em;
+    -moz-animation-delay: 1.3s;
+    -webkit-animation-delay: 1.3s;
+    -ms-animation-delay: 1.3s;
+    -o-animation-delay: 1.3s;
+    animation-delay: 1.3s
+}
+
+#widget-loading .balls .ball_8 {
+    left: 10.5em;
+    -moz-animation-delay: 1.43s;
+    -webkit-animation-delay: 1.43s;
+    -ms-animation-delay: 1.43s;
+    -o-animation-delay: 1.43s;
+    animation-delay: 1.43s
+}
+
+#page-bluetooth {
+    box-sizing: border-box;
+}
+
+#page-bluetooth h1 {
+    font-size: 200%;
+    line-height: 1.5em;
+    margin: 0 0 0.3em 0;
+    padding: 0.3em;
+    color: white;
+    background: black;
+}
+
+#page-bluetooth .list {
+    width: 100%;
+    /*padding: 0 0.5em;*/
+    box-sizing: border-box;
+}
+
+#page-bluetooth .list li {
+    width: 100%;
+    box-sizing: border-box;
+    list-style: none;
+    background: black;
+    color: white;
+    padding: 0.5em;
+    line-height: 2em;
+    margin-bottom: 0.5em;
+}
+
+
+#page-controller {
+    background: #333;
+}
+
+#page-controller .scene {
+    margin: 100px auto;
+    width: 120px;
+    height: 120px;
+    background: url(../img/paddle-scene.gif);
+    position: relative;
+    transform: scale(2);
+    -webkit-transform: scale(2);
+}
+
+#page-controller .scene .bar {
+    width: 78px;
+    height: 78px;
+    top: 21px;
+    left: 21px;
+    background: url(../img/paddle-bar.gif);
+    position: absolute;
+}
+
+#page-controller .scene .rods {
+    width: 44px;
+    height: 44px;
+    top: 38px;
+    left: 38px;
+    background: url(../img/paddle-rods.png);
+    position: absolute;
+}
+
+#page-controller .msg {
+    position: absolute;
+    top: 200px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5em;
+    height: 400px;
+    overflow: hidden;
+    color: white;
+}
+
+#page-controller .buttons {
+    text-align: center;
+}
+
+#page-controller .buttons button {
+    font-size: 130%;
+    width: 4em;
+    height: 2em;
+    line-height: 2em;
+    margin: 1em;
+}
