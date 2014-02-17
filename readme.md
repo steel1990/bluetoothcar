@@ -10,3 +10,5 @@ You can use your smart phone to control you arduino car with bluetooth.
 `/phonegap/` is the folder of smart phone controller app.
 
 `/phonegap/run.sh` is the shell script can run the android controller app in a phone.
+
+`/phonegap/platforms/android/bin/CarController-debug.apk` is the android controller app, you can install it in your phone.
